@@ -1,7 +1,5 @@
-import os, sys
-sys.path.append(os.path.dirname(os.path.dirname(__file__)))
-
 import pytest
+
 from calc import Calculator
 
 def test_sum():
