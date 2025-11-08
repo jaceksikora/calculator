@@ -1,5 +1,7 @@
 # Ignore everything by default
 *
+!htmlcov
+!.coveragerc
 !.gitignore
 !calc.py
 !tests/
