@@ -20,7 +20,9 @@ def test_divide():
 
 def test_divide_by_zero():
     calc = Calculator(6, 0)
-    assert calc.divide() == "Dzielenie przez zero"
+    with pytest.raises(ZeroDivisionError) as exc_info:
+        calc.divide()
+    assert str(exc_info.value) == "Zero Division"
 
 def test_invalid_arguments():
     with pytest.raises(TypeError):
