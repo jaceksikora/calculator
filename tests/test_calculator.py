@@ -19,11 +19,11 @@ def test_divide():
     assert calc.divide() == 3
 
 def test_divide_by_zero():
-    calc = Calculator(6, 0)
     with pytest.raises(ZeroDivisionError) as exc_info:
-        calc.divide()
+        Calculator(6, 0).divide()
     assert str(exc_info.value) == "Zero Division"
 
 def test_invalid_arguments():
-    with pytest.raises(TypeError):
+    with pytest.raises(ValueError) as exc_info:
         Calculator("abc", 2)
+    assert str(exc_info.value) == "String 'abc' is not a number"
